@@ -1,0 +1,17 @@
+.idea/
+*.iml
+/*/*.iml
+
+target/
+/*/target/
+
+logs/
+/lib/
+.DS_Store
+
+.project
+.settings/
+.classpath
+.vertx/
+
+
