@@ -1,4 +1,4 @@
-package cn.rwj.framework.spring;
+package cn.rwj.framework.spring.beans;
 
 /**
  * @author rwj

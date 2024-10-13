@@ -1,8 +1,8 @@
 package cn.rwj.framework.spring.test;
 
-import cn.rwj.framework.spring.factory.config.BeanDefinition;
-import cn.rwj.framework.spring.factory.support.DefaultListableBeanFactory;
-import cn.rwj.framework.spring.test.bean.UserService;
+import cn.rwj.framework.spring.beans.factory.config.BeanDefinition;
+import cn.rwj.framework.spring.beans.factory.support.DefaultListableBeanFactory;
+import cn.rwj.framework.spring.test.beans.UserService;
 import org.junit.Test;
 
 import java.lang.reflect.Constructor;

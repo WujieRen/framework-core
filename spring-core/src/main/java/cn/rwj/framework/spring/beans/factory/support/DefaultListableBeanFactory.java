@@ -1,7 +1,7 @@
-package cn.rwj.framework.spring.factory.support;
+package cn.rwj.framework.spring.beans.factory.support;
 
-import cn.rwj.framework.spring.BeansException;
-import cn.rwj.framework.spring.factory.config.BeanDefinition;
+import cn.rwj.framework.spring.beans.BeansException;
+import cn.rwj.framework.spring.beans.factory.config.BeanDefinition;
 
 import java.util.HashMap;
 import java.util.Map;

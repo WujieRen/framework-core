@@ -1,4 +1,4 @@
-package cn.rwj.framework.spring.test.bean;
+package cn.rwj.framework.spring.test.beans;
 
 /**
  * @author rwj

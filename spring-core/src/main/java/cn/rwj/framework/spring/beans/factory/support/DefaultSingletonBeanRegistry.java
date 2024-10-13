@@ -1,6 +1,6 @@
-package cn.rwj.framework.spring.factory.support;
+package cn.rwj.framework.spring.beans.factory.support;
 
-import cn.rwj.framework.spring.factory.config.SingletonBeanRegistry;
+import cn.rwj.framework.spring.beans.factory.config.SingletonBeanRegistry;
 
 import java.util.HashMap;
 import java.util.Map;

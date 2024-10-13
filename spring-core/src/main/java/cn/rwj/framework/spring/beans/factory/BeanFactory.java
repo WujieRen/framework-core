@@ -1,7 +1,7 @@
-package cn.rwj.framework.spring.factory;
+package cn.rwj.framework.spring.beans.factory;
 
 
-import cn.rwj.framework.spring.BeansException;
+import cn.rwj.framework.spring.beans.BeansException;
 
 /**
  * Bean工厂

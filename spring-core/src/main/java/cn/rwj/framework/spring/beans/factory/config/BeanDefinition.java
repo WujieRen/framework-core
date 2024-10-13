@@ -1,4 +1,4 @@
-package cn.rwj.framework.spring.factory.config;
+package cn.rwj.framework.spring.beans.factory.config;
 
 /**
  * Bean定义，对创建Bean所需属性的封装，描述创建一个Bean所必须的要素

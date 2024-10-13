@@ -1,4 +1,4 @@
-package cn.rwj.framework.spring.factory.config;
+package cn.rwj.framework.spring.beans.factory.config;
 
 /**
  * 单例Bean的注册
