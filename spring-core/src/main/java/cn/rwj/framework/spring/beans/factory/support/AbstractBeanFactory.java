@@ -2,7 +2,13 @@ package cn.rwj.framework.spring.beans.factory.support;
 
 import cn.rwj.framework.spring.beans.BeansException;
 import cn.rwj.framework.spring.beans.factory.BeanFactory;
+import cn.rwj.framework.spring.beans.factory.config.AutowireCapableBeanFactory;
 import cn.rwj.framework.spring.beans.factory.config.BeanDefinition;
+import cn.rwj.framework.spring.beans.factory.config.BeanPostProcessor;
+import cn.rwj.framework.spring.beans.factory.config.ConfigurableBeanFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 抽象Bean工厂。
@@ -15,7 +21,12 @@ import cn.rwj.framework.spring.beans.factory.config.BeanDefinition;
  * @author rwj
  * @since 2024/10/13
  */
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
+public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements ConfigurableBeanFactory {
+
+    /**
+     * BeanPostProcessors to apply in createBean
+     */
+    private final List<BeanPostProcessor> beanPostProcessors = new ArrayList<BeanPostProcessor>();
 
     @Override
     public Object getBean(String name) throws BeansException {
@@ -32,7 +43,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         return (T) getBean(name);
     }
 
-    public <T> T doGetBean(String name, Object... args) throws BeansException {
+    protected <T> T doGetBean(final String name, final Object[] args) {
         Object bean = getSingleton(name);
         if (bean != null) {
             return (T) bean;
@@ -44,7 +55,20 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
     protected abstract BeanDefinition getBeanDefinition(String beanName) throws BeansException;
 
-
     protected abstract Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException;
+
+    @Override
+    public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor) {
+        this.beanPostProcessors.remove(beanPostProcessor);
+        this.beanPostProcessors.add(beanPostProcessor);
+    }
+
+    /**
+     * Return the list of BeanPostProcessors that will get applied
+     * to beans created with this factory.
+     */
+    public List<BeanPostProcessor> getBeanPostProcessors() {
+        return this.beanPostProcessors;
+    }
 
 }
